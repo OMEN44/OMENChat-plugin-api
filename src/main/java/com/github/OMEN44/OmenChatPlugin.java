@@ -1,5 +1,8 @@
 package com.github.OMEN44;
 
+import com.github.OMEN44.command.Command;
+import com.github.OMEN44.command.CommandFactory;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
