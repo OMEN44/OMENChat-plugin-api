@@ -1,5 +1,4 @@
-import comand.Command;
-import comand.CommandFactory;
+package com.github.OMEN44;
 
 import java.util.Collections;
 import java.util.HashMap;
