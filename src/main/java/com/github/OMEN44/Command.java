@@ -9,4 +9,5 @@ public interface Command {
      * @return Returns the success of the command
      */
     boolean execute(String label, String sender, String timeSent, String[] args);
+
 }

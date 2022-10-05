@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public interface OmenChatPlugin {
+
     Map<String, Command> commandMap = new HashMap<>();
 
     void onLoad();
