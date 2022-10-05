@@ -1,17 +1,33 @@
 package com.github.OMEN44;
 
-import com.github.OMEN44.command.Command;
-import com.github.OMEN44.command.CommandFactory;
-
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public interface OmenChatPlugin {
     Map<String, Command> commandMap = new HashMap<>();
 
-    default List<CommandFactory> getCommandFactories() {
-        return Collections.emptyList();
+    void onLoad();
+
+    void onDisable();
+
+    default Command getCommandExecutor(String id) {
+        if (id != null) {
+            return commandMap.get(id);
+        }
+        throw new NullPointerException("Command id cannot be null");
+    }
+
+    default Map<String, Command> getCommandExecutors() {
+        return commandMap;
+    }
+
+    default void setCommandExecutor(String name, Command command) {
+        if (name != null && command != null) {
+            if (!commandMap.containsKey(name)) {
+                commandMap.put(name, command);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Command with this id already exists");
     }
 }
