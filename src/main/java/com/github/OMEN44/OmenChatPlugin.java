@@ -7,7 +7,9 @@ public interface OmenChatPlugin {
 
     Map<String, Command> commandMap = new HashMap<>();
 
-    void onLoad();
+    String getName();
+
+    void onEnable();
 
     void onDisable();
 
