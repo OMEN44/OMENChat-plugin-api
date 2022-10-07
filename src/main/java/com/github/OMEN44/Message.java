@@ -49,23 +49,28 @@ public class Message {
         return senderId;
     }
 
-    public void setGroup(String group) {
+    public Message setGroup(String group) {
         this.group = group;
+        return this;
     }
 
-    public void setLabel(String label) {
+    public Message setLabel(String label) {
         this.label = label;
+        return this;
     }
 
-    public void setArgs(String... args) {
+    public Message setArgs(String... args) {
         this.args = args;
+        return this;
     }
 
-    public void setTimeSent(String timeSent) {
+    public Message setTimeSent(String timeSent) {
         this.timeSent = timeSent;
+        return this;
     }
 
-    public void setSenderId(String senderId) {
+    public Message setSenderId(String senderId) {
         this.senderId = senderId;
+        return this;
     }
 }
