@@ -2,14 +2,6 @@ package com.github.OMEN44;
 
 public class Message {
 
-    public Message(String group, String label, String[] args, String timeSent, String senderId) {
-        this.group = group;
-        this.label = label;
-        this.args = args;
-        this.timeSent = timeSent;
-        this.senderId = senderId;
-    }
-
     /*
         QUERIES and RESPONSES are very similar and a query must be followed with a response from the server, use these for
         getting data from the server.
@@ -28,14 +20,14 @@ public class Message {
                 0 -
         */
     //the label is the command id for example: A12
-    private final String group;
-    private final String label;
+    private String group;
+    private String label;
     //the arguments are command specific
-    private final String[] args;
+    private String[] args;
     //date that the message was sent
-    private final String timeSent;
+    private String timeSent;
     //who sent the message
-    private final String senderId;
+    private String senderId;
 
     public String getGroup() {
         return group;
@@ -55,5 +47,25 @@ public class Message {
 
     public String getSenderId() {
         return senderId;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public void setArgs(String... args) {
+        this.args = args;
+    }
+
+    public void setTimeSent(String timeSent) {
+        this.timeSent = timeSent;
+    }
+
+    public void setSenderId(String senderId) {
+        this.senderId = senderId;
     }
 }
