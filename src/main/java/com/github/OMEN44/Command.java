@@ -8,6 +8,6 @@ public interface Command {
      * @param args arguments sent for the command
      * @return Returns the success of the command
      */
-    boolean execute(String label, String sender, String timeSent, String[] args);
+    Message execute(String label, String sender, String timeSent, String[] args);
 
 }
