@@ -15,7 +15,7 @@ public interface OmenChatPlugin {
 
     default Command getCommandExecutor(String id) {
         if (id != null) {
-            return commandMap.get(id);
+            return commandMap.get(getName() + id);
         }
         throw new NullPointerException("Command id cannot be null");
     }
@@ -27,7 +27,7 @@ public interface OmenChatPlugin {
     default void setCommandExecutor(String name, Command command) {
         if (name != null && command != null) {
             if (!commandMap.containsKey(name)) {
-                commandMap.put(name, command);
+                commandMap.put(getName() + name, command);
                 return;
             }
         }
