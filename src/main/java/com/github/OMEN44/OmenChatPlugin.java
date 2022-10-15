@@ -7,11 +7,11 @@ public abstract class OmenChatPlugin {
 
     Map<String, Command> commandMap;
 
-    abstract String getName();
+    abstract public String getName();
 
-    abstract void onEnable();
+    abstract public void onEnable();
 
-    abstract void onDisable();
+    abstract public void onDisable();
 
     public Command getCommandExecutor(String id) {
         if (id != null) {
