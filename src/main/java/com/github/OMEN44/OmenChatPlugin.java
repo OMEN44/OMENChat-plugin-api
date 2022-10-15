@@ -3,28 +3,28 @@ package com.github.OMEN44;
 import java.util.HashMap;
 import java.util.Map;
 
-public interface OmenChatPlugin {
+public abstract class OmenChatPlugin {
 
-    Map<String, Command> commandMap = new HashMap<>();
+    Map<String, Command> commandMap;
 
-    String getName();
+    abstract String getName();
 
-    void onEnable();
+    abstract void onEnable();
 
-    void onDisable();
+    abstract void onDisable();
 
-    default Command getCommandExecutor(String id) {
+    public Command getCommandExecutor(String id) {
         if (id != null) {
             return commandMap.get(getName() + id);
         }
         throw new NullPointerException("Command id cannot be null");
     }
 
-    default Map<String, Command> getCommandExecutors() {
+    public Map<String, Command> getCommandExecutors() {
         return commandMap;
     }
 
-    default void setCommandExecutor(String name, Command command) {
+    public void setCommandExecutor(String name, Command command) {
         if (name != null && command != null) {
             if (!commandMap.containsKey(name)) {
                 commandMap.put(getName() + name, command);
