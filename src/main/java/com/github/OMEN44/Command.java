@@ -2,8 +2,6 @@ package com.github.OMEN44;
 
 public interface Command {
 
-    String getLabel();
-
     /**
      * @param label Name of the command being sent
      * @param sender user or source of the command
